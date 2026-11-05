@@ -77,3 +77,11 @@ Routes: `/` (complete scrolling homepage), `/about`, `/services`, `/experience`,
 Motion: intersection-observer scroll reveal (700ms), floating portrait (7s loop), card hover lift/shadow (250ms), button hover lift (200ms), chart bar height transitions (700ms), and reduced-motion support.
 
 Contact form uses `mailto:`; it requires the visitor to send the prepared email in their email app. There is no server-side delivery.
+
+
+## Build error fix (November 2026)
+Moved the `use client` directive to the beginning of `app/page.tsx` before imports to resolve the Next.js client component compilation error.
+
+Install dependencies with `npm install`, then run `npm run build`. The build could not be run in the packaging environment because npm registry access was unavailable.
+
+Email delivery requires the Resend environment variables described in `CONTACT_SETUP.md`.

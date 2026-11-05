@@ -1,5 +1,6 @@
-import ServiceMenu, {serviceLinks} from './components/ServiceMenu';
 'use client';
+
+import ServiceMenu, {serviceLinks} from './components/ServiceMenu';
 import {useEffect,useState} from 'react';
 import {usePathname} from 'next/navigation';
 import PerformanceChart from './PerformanceChart';

@@ -49,3 +49,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,
  .portfolio-app .btn-outline{transition:transform .2s ease,background .2s ease,border-color .2s ease}
  .portfolio-app .btn-outline:hover{transform:translateY(-2px)}
 }
+
+.portfolio-app[data-page="services"]:has(> section > a[href="/services"]) > #services{display:none}

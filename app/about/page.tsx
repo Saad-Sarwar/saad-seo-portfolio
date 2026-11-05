@@ -1,2 +1,42 @@
-import Home from '../page';
-export default function Page(){return <Home/>}
+import { ArrowUpRight, Download, Globe2, GraduationCap, SearchCheck, BarChart3, Layers, Mail } from 'lucide-react';
+
+const expertise = [
+  { title: 'Technical SEO', text: 'Technical audits, crawlability, indexing, website structure, internal linking and actionable fixes.', Icon: SearchCheck },
+  { title: 'Content & On-Page Strategy', text: 'Keyword research, search intent, content planning, metadata and page-level optimization.', Icon: Layers },
+  { title: 'Analytics & Reporting', text: 'Performance analysis using Google Search Console, GA4 and SEO research platforms.', Icon: BarChart3 },
+  { title: 'International Collaboration', text: 'Experience supporting websites and teams serving the US, UK and other markets.', Icon: Globe2 },
+];
+
+export default function AboutPage() {
+  return <main className="min-h-screen bg-[#f8fbff] text-[#112342]">
+    <header className="sticky top-0 z-50 border-b border-blue-100 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4 lg:px-10">
+        <a href="/" className="flex items-center gap-3"><img src="/ss-logo-mark.png" width="44" height="44" alt="SS logo" className="rounded-lg bg-[#071526] p-1"/><span><strong className="block text-sm">Saad Sarwar</strong><span className="block text-xs text-[#1554c0]">SEO Strategist</span></span></a>
+        <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-4 text-sm font-medium text-slate-600 sm:gap-6"><a href="/" className="hover:text-[#1554c0]">Home</a><a href="/about" aria-current="page" className="font-bold text-[#1554c0]">About</a><a href="/services" className="hover:text-[#1554c0]">Services</a><a href="/results" className="hover:text-[#1554c0]">Results</a><a href="/contact" className="hover:text-[#1554c0]">Contact</a></nav>
+        <a href="/Saad-Sarwar-Resume.pdf" download className="inline-flex items-center gap-2 rounded-xl bg-[#1554c0] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#0d3c8f]"><Download size={16}/> Download Resume</a>
+      </div>
+    </header>
+
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#edf5ff] via-white to-[#e5efff]">
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 pb-16 pt-16 lg:grid-cols-[1.05fr_.95fr] lg:gap-16 lg:px-10 lg:pb-24 lg:pt-24">
+        <div>
+          <span className="inline-flex rounded-full border border-blue-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-[#1554c0]">Get to know me</span>
+          <h1 className="mt-7 text-5xl font-black leading-[1.08] tracking-tight sm:text-6xl">A technical mindset.<br/><span className="text-[#1554c0]">An SEO focus.</span></h1>
+          <p className="mt-7 max-w-xl text-lg leading-8 text-slate-700">I'm Saad Sarwar, an SEO Strategist with 5+ years of experience working across 50+ websites. I combine a software engineering background with hands-on search optimization to help businesses improve how their websites are discovered and understood.</p>
+          <p className="mt-5 max-w-xl leading-8 text-slate-600">My work spans technical SEO, on-page optimization, content strategy, local search, outreach and performance reporting. I enjoy turning complex website challenges into clear, practical priorities for teams and clients.</p>
+          <div className="mt-9 flex flex-wrap gap-3"><a href="/results" className="inline-flex items-center gap-2 rounded-xl bg-[#1554c0] px-6 py-3 font-bold text-white hover:bg-[#0d3c8f]">Explore SEO Results <ArrowUpRight size={18}/></a><a href="/contact" className="inline-flex items-center gap-2 rounded-xl border border-blue-200 bg-white px-6 py-3 font-bold text-[#1554c0] hover:bg-blue-50">Let's Connect</a></div>
+        </div>
+        <div className="relative mx-auto w-full max-w-[490px]"><div className="absolute inset-7 rounded-[3rem] bg-blue-300/30 blur-3xl"/><div className="relative overflow-hidden rounded-[2rem] border border-blue-200 bg-gradient-to-b from-[#dcecff] to-[#b6d2f5] shadow-[0_30px_70px_rgba(21,84,192,.18)]"><img src="/saad-about-portrait.png" alt="Saad Sarwar wearing a light blue shirt" width="1080" height="1350" className="block h-auto w-full object-contain"/></div><div className="absolute -bottom-5 left-5 rounded-2xl border border-blue-100 bg-white px-6 py-4 shadow-xl"><span className="block text-2xl font-black text-[#1554c0]">50+</span><span className="text-xs font-semibold text-slate-600">Websites worked on</span></div></div>
+      </div>
+    </section>
+
+    <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10"><div className="grid gap-5 sm:grid-cols-3"><div className="rounded-2xl border border-blue-100 bg-white p-7 shadow-sm"><strong className="text-4xl font-black text-[#1554c0]">5+</strong><p className="mt-2 text-sm font-semibold text-slate-600">Years in SEO</p></div><div className="rounded-2xl border border-blue-100 bg-white p-7 shadow-sm"><strong className="text-4xl font-black text-[#1554c0]">50+</strong><p className="mt-2 text-sm font-semibold text-slate-600">Websites supported</p></div><div className="rounded-2xl border border-blue-100 bg-white p-7 shadow-sm"><strong className="text-4xl font-black text-[#1554c0]">US & UK</strong><p className="mt-2 text-sm font-semibold text-slate-600">International work experience</p></div></div></section>
+
+    <section className="bg-[#edf5ff] py-20"><div className="mx-auto max-w-7xl px-6 lg:px-10"><p className="text-xs font-bold uppercase tracking-[.2em] text-[#1554c0]">What I bring to a project</p><h2 className="mt-4 text-4xl font-black tracking-tight">Strategy backed by <span className="text-[#1554c0]">hands-on execution.</span></h2><div className="mt-10 grid gap-5 md:grid-cols-2">{expertise.map(({title,text,Icon})=><article key={title} className="rounded-2xl border border-blue-100 bg-white p-7 shadow-sm"><Icon size={30} className="text-[#1554c0]"/><h3 className="mt-5 text-xl font-bold">{title}</h3><p className="mt-3 leading-7 text-slate-600">{text}</p></article>)}</div></div></section>
+
+    <section className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-2 lg:px-10"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-[#1554c0]">My background</p><h2 className="mt-4 text-4xl font-black">Built on software engineering.</h2><p className="mt-6 leading-8 text-slate-600">I hold a BS in Software Engineering from Superior University, Lahore. That foundation shapes the way I approach SEO: understand how a website works, identify the obstacles, prioritize improvements and measure what matters.</p><div className="mt-7 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50 p-6"><GraduationCap size={27} className="shrink-0 text-[#1554c0]"/><div><strong>BS Software Engineering</strong><p className="mt-1 text-sm text-slate-600">Superior University · Lahore, Pakistan</p></div></div></div><div><p className="text-xs font-bold uppercase tracking-[.2em] text-[#1554c0]">Platforms & tools</p><h2 className="mt-4 text-4xl font-black">Practical tools. Clear insights.</h2><p className="mt-6 leading-8 text-slate-600">I work with search, analytics, content management and customer relationship tools to connect SEO recommendations with day-to-day execution.</p><div className="mt-7 flex flex-wrap gap-3">{['Google Search Console','Google Analytics 4','Semrush','Ahrefs','Screaming Frog','WordPress','Shopify','GoHighLevel','Custom CRMs','Google Business Profile'].map(tool=><span key={tool} className="rounded-full border border-blue-200 bg-white px-4 py-2 text-sm font-medium text-[#1554c0]">{tool}</span>)}</div></div></section>
+
+    <section className="bg-[#10294d] py-20 text-white"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-6 lg:flex-row lg:items-center lg:px-10"><div><p className="text-xs font-bold uppercase tracking-[.2em] text-blue-300">Let's work together</p><h2 className="mt-4 text-4xl font-black">Looking for an SEO partner?</h2><p className="mt-4 max-w-2xl leading-7 text-blue-100">I'm open to remote SEO roles, consulting, agency collaborations and international opportunities.</p></div><a href="mailto:saadsarwar93@gmail.com?subject=SEO%20Opportunity" className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-white px-6 py-4 font-bold text-[#1554c0]"><Mail size={18}/> Get in Touch</a></div></section>
+    <footer className="border-t border-blue-100 bg-white px-6 py-7 text-center text-sm text-slate-500">© 2026 Saad Sarwar · SEO Strategist</footer>
+  </main>;
+}
